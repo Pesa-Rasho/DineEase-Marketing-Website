@@ -1,8 +1,10 @@
+
 import { ArrowRight, CheckCircle2, Utensils, Calendar, Bell } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { cn } from "@/lib/utils"
 
 export default function Index() {
   const features = [
