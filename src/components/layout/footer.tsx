@@ -31,7 +31,7 @@ export function Footer() {
       <Container className="py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-lg font-semibold">SmartDine</h3>
+            <h3 className="text-lg font-semibold text-primary">DineEase</h3>
             <p className="mt-4 text-sm text-muted-foreground">
               Making restaurant booking smarter and easier for everyone.
             </p>
@@ -80,7 +80,7 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} SmartDine. All rights reserved.
+            &copy; {new Date().getFullYear()} DineEase. All rights reserved.
           </p>
         </div>
       </Container>

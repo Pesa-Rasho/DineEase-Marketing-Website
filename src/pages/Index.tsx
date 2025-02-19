@@ -1,5 +1,4 @@
-
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowRight, CheckCircle2, Utensils, Calendar, Bell } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/layout/header"
@@ -26,6 +25,24 @@ export default function Index() {
     },
   ]
 
+  const howItWorks = [
+    {
+      icon: Utensils,
+      title: "Choose Your Restaurant",
+      description: "Browse through our curated selection of top restaurants.",
+    },
+    {
+      icon: Calendar,
+      title: "Select Date & Time",
+      description: "Pick your preferred dining date and time slot.",
+    },
+    {
+      icon: Bell,
+      title: "Get Confirmed",
+      description: "Receive instant confirmation and reminder notifications.",
+    },
+  ]
+
   const pricing = [
     {
       name: "Basic",
@@ -48,6 +65,21 @@ export default function Index() {
         "SMS notifications",
         "Detailed user preferences",
         "24/7 customer support",
+        "Special event bookings",
+      ],
+    },
+    {
+      name: "Enterprise",
+      price: "$29.99/mo",
+      description: "For businesses and groups",
+      features: [
+        "All Pro features",
+        "Bulk reservations",
+        "API access",
+        "Dedicated account manager",
+        "Custom integration",
+        "Analytics dashboard",
+        "White-label option",
       ],
     },
   ]
@@ -57,10 +89,10 @@ export default function Index() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative isolate pt-24">
+        <section className="relative isolate bg-gradient-to-b from-primary/10 pt-24">
           <Container className="py-32 text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Smart Dining for the Modern Age
+            <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
+              Dining Made Easy with DineEase
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
               Book your favorite restaurants instantly with our AI-powered platform.
@@ -109,23 +141,64 @@ export default function Index() {
           </Container>
         </section>
 
+        {/* How it Works Section */}
+        <section id="how-it-works" className="bg-gradient-to-b from-muted/50 py-24 sm:py-32">
+          <Container>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+                How DineEase Works
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground">
+                Three simple steps to your perfect dining experience
+              </p>
+            </div>
+            <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">
+              {howItWorks.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="relative flex flex-col items-center rounded-2xl bg-card p-8 shadow-lg ring-1 ring-muted transition-transform hover:-translate-y-1"
+                >
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <step.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                  <p className="mt-4 text-center text-muted-foreground">
+                    {step.description}
+                  </p>
+                  <div className="mt-4 text-4xl font-bold text-primary/20">
+                    {index + 1}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
         {/* Pricing Section */}
         <section id="pricing" className="py-24 sm:py-32">
           <Container>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                 Simple, transparent pricing
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Choose the perfect plan for your dining needs
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
-              {pricing.map((tier) => (
+            <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+              {pricing.map((tier, index) => (
                 <div
                   key={tier.name}
-                  className="flex flex-col justify-between rounded-3xl bg-card p-8 ring-1 ring-muted xl:p-10"
+                  className={cn(
+                    "flex flex-col justify-between rounded-3xl bg-card p-8 ring-1 ring-muted xl:p-10",
+                    index === 1 && "relative bg-primary/5 ring-primary"
+                  )}
                 >
+                  {index === 1 && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-medium text-white">
+                      Most Popular
+                    </div>
+                  )}
                   <div>
                     <h3 className="text-lg font-semibold">{tier.name}</h3>
                     <p className="mt-4 text-sm text-muted-foreground">
@@ -145,7 +218,14 @@ export default function Index() {
                       ))}
                     </ul>
                   </div>
-                  <Button className="mt-8">Get started</Button>
+                  <Button
+                    className={cn(
+                      "mt-8",
+                      index === 1 && "bg-primary text-primary-foreground"
+                    )}
+                  >
+                    Get started
+                  </Button>
                 </div>
               ))}
             </div>
@@ -153,10 +233,10 @@ export default function Index() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 sm:py-32">
+        <section id="contact" className="bg-gradient-to-t from-muted/50 py-24 sm:py-32">
           <Container>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                 Get in touch
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">

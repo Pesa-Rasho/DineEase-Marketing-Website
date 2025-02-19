@@ -24,8 +24,8 @@ export function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold">
-              SmartDine
+            <Link to="/" className="text-xl font-bold text-primary">
+              DineEase
             </Link>
           </div>
 
