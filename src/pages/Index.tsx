@@ -1,5 +1,5 @@
 
-import { ArrowRight, CheckCircle2, Utensils, Calendar, Bell } from "lucide-react"
+import { ArrowRight, CheckCircle2, Utensils, Calendar, Bell, Sandwich, Bell as NotificationBell, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/layout/header"
@@ -14,16 +14,24 @@ export default function Index() {
         "Advanced AI-powered booking system that learns from your preferences.",
     },
     {
-      name: "Real-time Availability",
-      description: "See available tables and time slots in real-time.",
+      name: "Pre-order Meals",
+      description: "Order your meals in advance and skip the wait time.",
+    },
+    {
+      name: "Meal Customization",
+      description: "Customize your dishes with detailed preferences and dietary requirements.",
+    },
+    {
+      name: "Real-time Tracking",
+      description: "Get instant updates on your order status from preparation to serving.",
     },
     {
       name: "Personalized Recommendations",
-      description: "Get restaurant suggestions based on your dining history.",
+      description: "Get restaurant and dish suggestions based on your dining history.",
     },
     {
       name: "Instant Confirmation",
-      description: "Receive immediate confirmation for your bookings.",
+      description: "Receive immediate confirmation for your bookings and orders.",
     },
   ]
 
@@ -31,7 +39,12 @@ export default function Index() {
     {
       icon: Utensils,
       title: "Choose Your Restaurant",
-      description: "Browse through our curated selection of top restaurants.",
+      description: "Browse through our curated selection of top restaurants and their menus.",
+    },
+    {
+      icon: Sandwich,
+      title: "Pre-order & Customize",
+      description: "Select your meals and customize them to your preferences.",
     },
     {
       icon: Calendar,
@@ -39,9 +52,9 @@ export default function Index() {
       description: "Pick your preferred dining date and time slot.",
     },
     {
-      icon: Bell,
-      title: "Get Confirmed",
-      description: "Receive instant confirmation and reminder notifications.",
+      icon: NotificationBell,
+      title: "Stay Updated",
+      description: "Receive real-time notifications about your order status.",
     },
   ]
 
@@ -55,6 +68,8 @@ export default function Index() {
         "Simple booking system",
         "Email confirmations",
         "Basic user profile",
+        "Limited menu pre-ordering",
+        "Basic order status updates",
       ],
     },
     {
@@ -66,6 +81,9 @@ export default function Index() {
         "Priority bookings",
         "SMS notifications",
         "Detailed user preferences",
+        "Full menu pre-ordering",
+        "Real-time order tracking",
+        "Meal customization options",
         "24/7 customer support",
         "Special event bookings",
       ],
@@ -76,12 +94,14 @@ export default function Index() {
       description: "For businesses and groups",
       features: [
         "All Pro features",
-        "Bulk reservations",
+        "Bulk reservations & orders",
         "API access",
         "Dedicated account manager",
         "Custom integration",
         "Analytics dashboard",
         "White-label option",
+        "Advanced order management",
+        "Custom notification system",
       ],
     },
   ]
@@ -97,8 +117,7 @@ export default function Index() {
               Dining Made Easy with DineEase
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Book your favorite restaurants instantly with our AI-powered platform.
-              No more waiting in lines or endless phone calls.
+              Book tables, pre-order meals, and customize your dining experience. Get real-time updates from booking to dining with our AI-powered platform.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button size="lg" className="gap-2">
@@ -117,18 +136,17 @@ export default function Index() {
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Everything you need to dine smarter
+                Everything you need for a perfect dining experience
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Our platform brings together the best features to make your dining
-                experience seamless and enjoyable.
+                From reservations to customized pre-orders, we've got you covered with real-time updates every step of the way.
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:max-w-none lg:grid-cols-2">
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:max-w-none lg:grid-cols-3">
               {features.map((feature) => (
                 <div
                   key={feature.name}
-                  className="flex gap-x-4 rounded-xl border bg-card p-6"
+                  className="flex gap-x-4 rounded-xl border bg-card p-6 hover:bg-accent/50 transition-colors"
                 >
                   <CheckCircle2 className="h-7 w-5 flex-none text-primary" />
                   <div>
@@ -151,10 +169,10 @@ export default function Index() {
                 How DineEase Works
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Three simple steps to your perfect dining experience
+                Your journey to a perfect dining experience
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">
+            <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-4">
               {howItWorks.map((step, index) => (
                 <div
                   key={step.title}
@@ -238,7 +256,7 @@ export default function Index() {
         <section id="contact" className="bg-gradient-to-t from-muted/50 py-24 sm:py-32">
           <Container>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Get in touch
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
