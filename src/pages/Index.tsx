@@ -60,48 +60,50 @@ export default function Index() {
 
   const pricing = [
     {
-      name: "Basic",
-      price: "Free",
-      description: "Perfect for occasional diners",
+      name: "Starter",
+      price: "$99/mo",
+      description: "Perfect for small restaurants",
       features: [
-        "Basic restaurant search",
-        "Simple booking system",
-        "Email confirmations",
-        "Basic user profile",
-        "Limited menu pre-ordering",
-        "Basic order status updates",
+        "List your restaurant",
+        "Basic table management",
+        "Menu display",
+        "Email notifications",
+        "Basic analytics",
+        "Standard support",
+        "Up to 50 bookings/month",
       ],
     },
     {
-      name: "Pro",
-      price: "$9.99/mo",
-      description: "For food enthusiasts",
+      name: "Growth",
+      price: "$199/mo",
+      description: "For growing restaurants",
       features: [
-        "Advanced restaurant search",
-        "Priority bookings",
+        "Everything in Starter",
+        "Advanced table management",
+        "Custom menu with photos",
         "SMS notifications",
-        "Detailed user preferences",
-        "Full menu pre-ordering",
-        "Real-time order tracking",
-        "Meal customization options",
-        "24/7 customer support",
-        "Special event bookings",
+        "Pre-order management",
+        "Customer feedback system",
+        "Priority support",
+        "Up to 200 bookings/month",
+        "Advanced analytics",
       ],
     },
     {
-      name: "Enterprise",
-      price: "$29.99/mo",
-      description: "For businesses and groups",
+      name: "Premium",
+      price: "$399/mo",
+      description: "For established restaurants",
       features: [
-        "All Pro features",
-        "Bulk reservations & orders",
+        "Everything in Growth",
+        "Multiple location support",
         "API access",
         "Dedicated account manager",
-        "Custom integration",
-        "Analytics dashboard",
-        "White-label option",
-        "Advanced order management",
-        "Custom notification system",
+        "Custom integration options",
+        "White-label solution",
+        "24/7 VIP support",
+        "Unlimited bookings",
+        "Real-time analytics dashboard",
+        "Custom reporting",
       ],
     },
   ]
@@ -199,10 +201,10 @@ export default function Index() {
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-                Simple, transparent pricing
+                Restaurant Partnership Plans
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Choose the perfect plan for your dining needs
+                Choose the perfect plan to grow your restaurant business
               </p>
             </div>
             <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
@@ -226,6 +228,7 @@ export default function Index() {
                     </p>
                     <p className="mt-6 flex items-baseline gap-x-1">
                       <span className="text-4xl font-bold">{tier.price}</span>
+                      <span className="text-sm font-semibold text-muted-foreground">/month</span>
                     </p>
                     <ul role="list" className="mt-8 space-y-3">
                       {tier.features.map((feature) => (
@@ -244,7 +247,7 @@ export default function Index() {
                       index === 1 && "bg-primary text-primary-foreground"
                     )}
                   >
-                    Get started
+                    Partner with us
                   </Button>
                 </div>
               ))}
