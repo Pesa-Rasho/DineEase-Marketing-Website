@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
@@ -12,12 +12,22 @@ import {
 } from "@/components/ui/sheet"
 
 export function Header() {
+  const navigate = useNavigate()
+  
   const navigation = [
-    { name: "Features", href: "#features" },
-    { name: "How it works", href: "#how-it-works" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Contact", href: "#contact" },
+    { name: "Features", href: "/#features" },
+    { name: "How it works", href: "/#how-it-works" },
+    { name: "Pricing", href: "/#pricing" },
+    { name: "Contact", href: "/#contact" },
   ]
+
+  const handleNavigation = (href: string) => {
+    navigate('/')
+    setTimeout(() => {
+      const element = document.querySelector(href.replace('/', ''))
+      element?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
 
   return (
     <header className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
@@ -32,13 +42,13 @@ export function Header() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:gap-x-8">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavigation(item.href)}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -55,13 +65,15 @@ export function Header() {
               </SheetHeader>
               <nav className="flex flex-col gap-4 pt-4">
                 {navigation.map((item) => (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                    onClick={() => {
+                      handleNavigation(item.href)
+                    }}
+                    className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                   >
                     {item.name}
-                  </a>
+                  </button>
                 ))}
               </nav>
             </SheetContent>
