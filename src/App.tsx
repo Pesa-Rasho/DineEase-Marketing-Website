@@ -9,6 +9,7 @@ import Legal from "./pages/legal"
 import Privacy from "./pages/privacy"
 import Terms from "./pages/terms"
 import Cookies from "./pages/cookies"
+import Partner from "./pages/partner"
 import NotFound from "./pages/NotFound"
 
 const queryClient = new QueryClient()
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/partner" element={<Partner />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

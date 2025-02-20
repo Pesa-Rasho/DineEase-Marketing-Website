@@ -1,12 +1,14 @@
-
 import { ArrowRight, CheckCircle2, Utensils, Calendar, Bell, Sandwich, Bell as NotificationBell } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
+import { useNavigate } from "react-router-dom"
 
 export default function Index() {
+  const navigate = useNavigate()
+
   const features = [
     {
       name: "Smart Booking",
@@ -219,8 +221,9 @@ export default function Index() {
               {pricing.map((tier, index) => (
                 <div
                   key={tier.name}
+                  onClick={() => navigate(`/partner?plan=${tier.name.toLowerCase()}`)}
                   className={cn(
-                    "relative overflow-hidden rounded-3xl border bg-card p-8 transition-all hover:shadow-lg xl:p-10",
+                    "relative overflow-hidden rounded-3xl border bg-card p-8 transition-all hover:shadow-lg cursor-pointer xl:p-10",
                     index === 1 && "bg-primary/5 ring-2 ring-primary"
                   )}
                 >
