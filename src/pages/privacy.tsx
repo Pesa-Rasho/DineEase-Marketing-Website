@@ -13,7 +13,7 @@ export default function Privacy() {
           <div className="mt-8 space-y-6 text-muted-foreground">
             <p>Last updated: {new Date().toLocaleDateString()}</p>
             <p>
-              DineEase ("we," "us," or "our") values your privacy. This Privacy Policy explains how we collect, use, and protect your personal data when you use our web application.
+              DineEase, we value your privacy. This Privacy Policy explains how we collect, use, and protect your personal data when you use our web application.
             </p>
 
             <h2 className="text-2xl font-semibold text-foreground">

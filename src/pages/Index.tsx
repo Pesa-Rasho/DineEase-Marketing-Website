@@ -62,50 +62,44 @@ export default function Index() {
 
   const pricing = [
     {
-      name: "Starter",
-      price: "$99/mo",
+      name: "Value Pack",
+      price: "$99",
       description: "Perfect for small restaurants",
       features: [
-        "List your restaurant",
-        "Basic table management",
-        "Menu display",
-        "Email notifications",
-        "Basic analytics",
+        "Standard Restaurant Page",
+        "Standard Meal Page",
+        "One promotional advertisement per week",
+        "5% commission per pre-order",
+        "Exclusion from top listings  ",
         "Standard support",
-        "Up to 50 bookings/month",
       ],
     },
     {
-      name: "Growth",
-      price: "$199/mo",
+      name: "Standard Package",
+      price: "$199",
       description: "For growing restaurants",
       features: [
-        "Everything in Starter",
-        "Advanced table management",
+        "Custom Restaurant Page",
+        "Custom Meal Page",
         "Custom menu with photos",
-        "SMS notifications",
-        "Pre-order management",
-        "Customer feedback system",
+        "2-3 Promotional Ads per week",
+        "2% commission per pre-order",
+        "Top listing for selected weeks",
         "Priority support",
-        "Up to 200 bookings/month",
-        "Advanced analytics",
       ],
     },
     {
-      name: "Premium",
-      price: "$399/mo",
+      name: "Max Pack",
+      price: "$299",
       description: "For established restaurants",
       features: [
-        "Everything in Growth",
-        "Multiple location support",
-        "API access",
-        "Dedicated account manager",
-        "Custom integration options",
-        "White-label solution",
+        "Custom Restaurant Page",
+        "Custom Meal Page",
+        "5 promotional Ads per week",
+        "Top Listing",
+        "No commissions",
+        "Personalized analystics and demand forecast",
         "24/7 VIP support",
-        "Unlimited bookings",
-        "Real-time analytics dashboard",
-        "Custom reporting",
       ],
     },
   ]
@@ -133,9 +127,6 @@ export default function Index() {
                   Get Started
                   <ArrowRight className="h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-base">
-                  Learn more
-                </Button>
               </div>
             </div>
           </Container>
@@ -156,7 +147,7 @@ export default function Index() {
               {features.map((feature) => (
                 <div
                   key={feature.name}
-                  className="relative overflow-hidden rounded-2xl border bg-gradient-to-b from-background to-background/80 p-8 backdrop-blur-sm transition-all hover:shadow-lg"
+                  className="relative overflow-hidden rounded-2xl border bg-gradient-to-b from-background to-background/80 p-8 backdrop-blur-sm transition-all hover:shadow-lg cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
                   <div className="relative">
@@ -184,11 +175,11 @@ export default function Index() {
                 Get started in minutes, not days
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-4">
+            <div className="mx-auto mt-16 grid max-w-lg gap-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
               {howItWorks.map((step, index) => (
                 <div
                   key={step.title}
-                  className="relative flex flex-col items-center rounded-2xl bg-card/50 p-8 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="relative flex flex-col items-center rounded-2xl bg-card/50 p-8 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer min-h-[300px]"
                 >
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
                     <step.icon className="h-8 w-8 text-primary" />
@@ -197,7 +188,7 @@ export default function Index() {
                   <p className="mt-4 text-center text-muted-foreground">
                     {step.description}
                   </p>
-                  <div className="mt-6 text-5xl font-light text-primary/10">
+                  <div className="mt-6 text-5xl font-light text-primary/50">
                     {index + 1}
                   </div>
                 </div>
@@ -223,15 +214,9 @@ export default function Index() {
                   key={tier.name}
                   onClick={() => navigate(`/partner?plan=${tier.name.toLowerCase()}`)}
                   className={cn(
-                    "relative overflow-hidden rounded-3xl border bg-card p-8 transition-all hover:shadow-lg cursor-pointer xl:p-10",
-                    index === 1 && "bg-primary/5 ring-2 ring-primary"
+                    "relative overflow-hidden rounded-3xl border bg-card p-8 transition-all hover:shadow-lg cursor-pointer xl:p-10"
                   )}
                 >
-                  {index === 1 && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-6 py-1 text-sm font-medium text-primary-foreground">
-                      Most Popular
-                    </div>
-                  )}
                   <div>
                     <h3 className="text-xl font-semibold">{tier.name}</h3>
                     <p className="mt-4 text-muted-foreground">

@@ -8,7 +8,6 @@ export function Footer() {
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms of Service", href: "/terms" },
       { name: "Cookie Policy", href: "/cookies" },
-      { name: "Legal", href: "/legal" },
     ],
     social: [
       {
@@ -21,7 +20,7 @@ export function Footer() {
       },
       {
         name: "Instagram",
-        href: "#",
+        href: "https://www.instagram.com/dineease.lk/",
       },
     ],
   }
@@ -70,10 +69,10 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul role="list" className="mt-4 space-y-2">
               <li className="text-sm text-muted-foreground">
-                Email: contact@smartdine.com
+                Email: dineease@gmail.com
               </li>
               <li className="text-sm text-muted-foreground">
-                Phone: (555) 123-4567
+                Phone: (076) 998-5883
               </li>
             </ul>
           </div>
