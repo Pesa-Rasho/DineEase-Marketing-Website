@@ -181,21 +181,29 @@ export default function Index() {
                   key={step.title}
                   className="relative flex flex-col items-center rounded-2xl bg-card/50 p-8 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer min-h-[300px]"
                 >
+                  {/* Step Index in Top-Right Corner */}
+                  <div className="absolute top-4 right-4 text-3xl font-light text-primary/50">
+                    {index + 1}
+                  </div>
+
+                  {/* Step Icon */}
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
                     <step.icon className="h-8 w-8 text-primary" />
                   </div>
+
+                  {/* Step Title */}
                   <h3 className="text-xl font-semibold">{step.title}</h3>
+
+                  {/* Step Description */}
                   <p className="mt-4 text-center text-muted-foreground">
                     {step.description}
                   </p>
-                  <div className="mt-6 text-5xl font-light text-primary/50">
-                    {index + 1}
-                  </div>
                 </div>
               ))}
             </div>
           </Container>
         </section>
+
 
         {/* Pricing Section */}
         <section id="pricing" className="py-24 sm:py-32">
