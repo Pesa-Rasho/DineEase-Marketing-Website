@@ -308,15 +308,15 @@ export default function Index() {
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
                   <label
-                    htmlFor="from_name"
+                    htmlFor="to_name"
                     className="block text-sm font-medium text-foreground"
                   >
                     Name
                   </label>
                   <input
                     type="text"
-                    name="from_name"
-                    id="from_name"
+                    name="to_name"
+                    id="to_name"
                     className="mt-2 block w-full rounded-lg border bg-background/50 px-4 py-2.5 text-foreground shadow-sm backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     required
                   />
