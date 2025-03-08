@@ -5,10 +5,19 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
 import { useNavigate } from "react-router-dom"
+import { useRef, useState } from "react"
+import emailJs from "@emailjs/browser"
+
 
 export default function Index() {
   const navigate = useNavigate()
 
+  const form = useRef<HTMLFormElement>(null);
+  const [formStatus, setFormStatus] = useState({
+    isSending: false,
+    isSent: false,
+    error: null
+  });
   const features = [
     {
       name: "Smart Booking",
@@ -103,6 +112,27 @@ export default function Index() {
       ],
     },
   ]
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setFormStatus({ isSending: true, isSent: false, error: null });
+
+    emailJs.sendForm(
+      'service_3ceb2ic',
+      'template_3xdd2wd',
+      form.current,
+      'mw2YKJHQiErlpbpj8'
+    )
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setFormStatus({ isSending: false, isSent: true, error: null });
+        form.current?.reset();
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error.text);
+        setFormStatus({ isSending: false, isSent: false, error: error.text });
+      });
+  };
 
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
@@ -276,33 +306,35 @@ export default function Index() {
               </p>
             </div>
             <div className="mx-auto mt-16 max-w-xl">
-              <form className="space-y-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
                   <label
-                    htmlFor="name"
+                    htmlFor="from_name"
                     className="block text-sm font-medium text-foreground"
                   >
                     Name
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    id="name"
+                    name="from_name"
+                    id="from_name"
                     className="mt-2 block w-full rounded-lg border bg-background/50 px-4 py-2.5 text-foreground shadow-sm backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    required
                   />
                 </div>
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="to_name"
                     className="block text-sm font-medium text-foreground"
                   >
                     Email
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    id="email"
+                    name="to_name"
+                    id="to_name"
                     className="mt-2 block w-full rounded-lg border bg-background/50 px-4 py-2.5 text-foreground shadow-sm backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    required
                   />
                 </div>
                 <div>
@@ -317,11 +349,43 @@ export default function Index() {
                     name="message"
                     rows={4}
                     className="mt-2 block w-full rounded-lg border bg-background/50 px-4 py-2.5 text-foreground shadow-sm backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    required
                   />
                 </div>
-                <Button type="submit" className="w-full text-base">
-                  Send message
+                <Button
+                  type="submit"
+                  className="w-full text-base"
+                  disabled={formStatus.isSending}
+                >
+                  {formStatus.isSending ? 'Sending...' : 'Send message'}
                 </Button>
+
+                {formStatus.isSent && (
+                  <div className="mt-4 rounded-md bg-green-50 p-4">
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <CheckCircle2 className="h-5 w-5 text-green-400" aria-hidden="true" />
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm font-medium text-green-800">
+                          Message sent successfully! Our team will contact you soon.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {formStatus.error && (
+                  <div className="mt-4 rounded-md bg-red-50 p-4">
+                    <div className="flex">
+                      <div className="ml-3">
+                        <p className="text-sm font-medium text-red-800">
+                          Failed to send message. Please try again later.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </form>
             </div>
           </Container>
