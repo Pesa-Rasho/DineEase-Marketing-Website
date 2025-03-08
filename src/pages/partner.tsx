@@ -26,10 +26,10 @@ export default function Partner() {
 
     if (form.current) {
       emailjs.sendForm(
-        'YOUR_SERVICE_ID',    // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID',   // Replace with your EmailJS template ID
+        'service_3ceb2ic',    // Replace with your EmailJS service ID
+        'template_65kg9ob',   // Replace with your EmailJS template ID
         form.current,
-        'YOUR_PUBLIC_KEY'     // Replace with your EmailJS public key
+        'mw2YKJHQiErlpbpj8'     // Replace with your EmailJS public key
       )
         .then((result) => {
           console.log('Email sent successfully:', result.text);
