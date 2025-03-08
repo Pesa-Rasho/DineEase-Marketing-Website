@@ -293,7 +293,6 @@ export default function Index() {
           </Container>
         </section>
 
-        {/* Contact Section */}
         <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
           <div className="absolute inset-0 bg-gradient-to-t from-muted/30 to-transparent" />
           <Container className="relative">
@@ -324,15 +323,15 @@ export default function Index() {
                 </div>
                 <div>
                   <label
-                    htmlFor="to_name"
+                    htmlFor="reply_to"
                     className="block text-sm font-medium text-foreground"
                   >
                     Email
                   </label>
                   <input
                     type="email"
-                    name="to_name"
-                    id="to_name"
+                    name="reply_to"
+                    id="reply_to"
                     className="mt-2 block w-full rounded-lg border bg-background/50 px-4 py-2.5 text-foreground shadow-sm backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     required
                   />
