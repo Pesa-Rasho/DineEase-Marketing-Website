@@ -51,16 +51,16 @@ export default function Index() {
       icon: Utensils,
       title: "Choose Your Restaurant",
       description: "Browse through our curated selection of top restaurants and their menus.",
-    },
-    {
-      icon: Sandwich,
-      title: "Pre-order & Customize",
-      description: "Select your meals and customize them to your preferences.",
-    },
+    },   
     {
       icon: Calendar,
       title: "Select Date & Time",
       description: "Pick your preferred dining date and time slot.",
+    },
+    {
+      icon: Sandwich,
+      title: "Customize your table and Pre-order Meals",
+      description: "Select your table and meals, and customize them to your preferences.",
     },
     {
       icon: NotificationBell,
@@ -139,31 +139,41 @@ export default function Index() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative isolate overflow-hidden">
+        <section className="relative isolate overflow-hidden mt-16">
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-80"
+            style={{ backgroundImage: "url('/background.jpg')" }}
+          />
+
+          {/* Dark Background Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+
+          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/5 to-transparent" />
+
           <Container className="relative py-40 sm:py-48">
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+              <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl">
                 Dining Made Easy with{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                   DineEase
                 </span>
               </h1>
-              <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground">
+              <p className="mx-auto mt-8 max-w-2xl text-xl sm:text-2xl text-white">
                 Elevate your restaurant's presence with our AI-powered platform. Seamless bookings, pre-orders, and real-time updates for an exceptional dining experience.
               </p>
               <div className="mt-12 flex items-center justify-center gap-x-6">
-                <Button size="lg" className="gap-2 text-base">
+                <Button size="lg" className="gap-2 text-lg sm:text-xl">
                   Get Started
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-6 w-6" />
                 </Button>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* Features Section */}
-        <section id="features" className="py-24 sm:py-32">
+        <section id="features" className="py-24  mt-4">
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -193,7 +203,6 @@ export default function Index() {
           </Container>
         </section>
 
-        {/* How it Works Section */}
         <section id="how-it-works" className="relative overflow-hidden py-24 sm:py-32">
           <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-transparent" />
           <Container className="relative">
@@ -211,20 +220,16 @@ export default function Index() {
                   key={step.title}
                   className="relative flex flex-col items-center rounded-2xl bg-card/50 p-8 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer min-h-[300px]"
                 >
-                  {/* Step Index in Top-Right Corner */}
                   <div className="absolute top-4 right-4 text-3xl font-light text-primary/50">
                     {index + 1}
                   </div>
 
-                  {/* Step Icon */}
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
                     <step.icon className="h-8 w-8 text-primary" />
                   </div>
 
-                  {/* Step Title */}
                   <h3 className="text-xl font-semibold">{step.title}</h3>
 
-                  {/* Step Description */}
                   <p className="mt-4 text-center text-muted-foreground">
                     {step.description}
                   </p>
@@ -234,9 +239,7 @@ export default function Index() {
           </Container>
         </section>
 
-
-        {/* Pricing Section */}
-        <section id="pricing" className="py-24 sm:py-32">
+        <section id="pricing" >
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">

@@ -11,14 +11,6 @@ export function Footer() {
     ],
     social: [
       {
-        name: "Twitter",
-        href: "#",
-      },
-      {
-        name: "Facebook",
-        href: "#",
-      },
-      {
         name: "Instagram",
         href: "https://www.instagram.com/dineease.lk/",
       },
@@ -69,7 +61,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul role="list" className="mt-4 space-y-2">
               <li className="text-sm text-muted-foreground">
-                Email: dineease@gmail.com
+                Email: teamdineease@gmail.com
               </li>
               <li className="text-sm text-muted-foreground">
                 Phone: (076) 998-5883
