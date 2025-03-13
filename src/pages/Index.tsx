@@ -311,37 +311,36 @@ export default function Index() {
                 {
                   name: "Kevin Fernando",
                   role: "Team Leader, Full Stack Developer",
-                  image: "/team/kevin.jpg" // Replace with actual image path
+                  image: "/team/kevin.jpg" 
                 },
                 {
                   name: "Pesandu Rashodya",
                   role: "Co-Leader, Full Stack Developer",
-                  image: "/pesandu.jpg" // Replace with actual image path
+                  image: "/pesandu.jpg"
                 },
                 {
                   name: "Imsarie Dharmathilaka",
                   role: "Full Stack Developer, Marketing",
-                  image: "/imsarie.jpg" // Replace with actual image path
+                  image: "/imsarie.jpg" 
                 },
                 {
                   name: "Sudhir Fernando",
                   role: "Full Stack Developer, Designer",
-                  image: "/sudhir.jpg" // Replace with actual image path
+                  image: "/sudhir.jpg" 
                 },
                 {
                   name: "Manazir Mohommed",
                   role: "Full Stack Developer, Designer",
-                  image: "/team/manazir.jpg" // Replace with actual image path
+                  image: "/team/manazir.jpg"
                 },
                 {
                   name: "Yasindu Imanjith",
                   role: "Full Stack Developer, ML Engineer",
-                  image: "/team/yasindu.jpg" // Replace with actual image path
+                  image: "/team/yasindu.jpg" 
                 }
               ].map((member, index) => (
                 <div key={index} className="relative p-6 rounded-2xl bg-card shadow-md border border-muted/20 backdrop-blur-sm flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300">
                   <div className="h-32 w-32 rounded-full overflow-hidden mb-4 border-2 border-primary/20">
-                    {/* Replace with actual images - using placeholder for now */}
                     <img
                       src={member.image}
                       alt={member.name}
