@@ -213,7 +213,7 @@ export default function Index() {
               <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
                 Key Features
               </span>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground">
                 Redefining Restaurant Management
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -251,7 +251,7 @@ export default function Index() {
               <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
                 Simple Process
               </span>
-              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground text-[#EF4444]">
                 Integration Made Simple
               </h2>
               <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -363,7 +363,7 @@ export default function Index() {
               <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
                 Pricing Plans
               </span>
-              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground text-[#EF4444]">
                 Restaurant Partnership Plans
               </h2>
               <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
