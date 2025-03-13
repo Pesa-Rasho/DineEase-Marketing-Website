@@ -17,7 +17,7 @@ export default function Index() {
     isSent: false,
     error: null
   });
-  
+
   const features = [
     {
       icon: ShieldCheck,
@@ -172,7 +172,7 @@ export default function Index() {
 
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
-          
+
           {/* Abstract Shapes */}
           <div className="absolute top-0 left-0 right-0 h-32 overflow-hidden">
             <div className="absolute -top-24 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl opacity-50" />
@@ -262,7 +262,7 @@ export default function Index() {
             <div className="relative">
               {/* Connecting line */}
               <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20 transform -translate-y-1/2 z-0" />
-              
+
               <div className="mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
                 {howItWorks.map((step, index) => (
                   <div
@@ -292,69 +292,69 @@ export default function Index() {
         </section>
 
         {/* Team Section */}
-<section className="py-24 bg-gradient-to-b from-background to-muted/20" id="team">
-  <Container>
-    <div className="mx-auto max-w-3xl text-center mb-16">
-      <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
-        Meet Our Team
-      </span>
-      <h2 className="text-4xl font-bold tracking-tight sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
-        The Minds Behind DineEase
-      </h2>
-      <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
-        Our dedicated team of developers and designers working together to revolutionize restaurant management
-      </p>
-    </div>
+        <section className="py-24 bg-gradient-to-b from-background to-muted/20" id="team">
+          <Container>
+            <div className="mx-auto max-w-3xl text-center mb-16">
+              <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
+                Meet Our Team
+              </span>
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
+                The Minds Behind DineEase
+              </h2>
+              <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+                Our dedicated team of developers and designers working together to revolutionize restaurant management
+              </p>
+            </div>
 
-    <div className="mx-auto grid gap-8 md:grid-cols-3">
-      {[
-        {
-          name: "Kevin Fernando",
-          role: "Team Leader, Full Stack Developer",
-          image: "/team/kevin.jpg" // Replace with actual image path
-        },
-        {
-          name: "Pesandu Rashodya",
-          role: "Co-Leader, Full Stack Developer",
-          image: "/team/pesandu.jpg" // Replace with actual image path
-        },
-        {
-          name: "Imsarie Dharmathilaka",
-          role: "Full Stack Developer, Marketing",
-          image: "/team/imsarie.jpg" // Replace with actual image path
-        },
-        {
-          name: "Sudhir Fernando",
-          role: "Full Stack Developer, Designer",
-          image: "/team/sudhir.jpg" // Replace with actual image path
-        },
-        {
-          name: "Manazir Mohommed",
-          role: "Full Stack Developer, Designer",
-          image: "/team/manazir.jpg" // Replace with actual image path
-        },
-        {
-          name: "Yasindu Imanjith",
-          role: "Full Stack Developer, ML Engineer",
-          image: "/team/yasindu.jpg" // Replace with actual image path
-        }
-      ].map((member, index) => (
-        <div key={index} className="relative p-6 rounded-2xl bg-card shadow-md border border-muted/20 backdrop-blur-sm flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300">
-          <div className="h-32 w-32 rounded-full overflow-hidden mb-4 border-2 border-primary/20">
-            {/* Replace with actual images - using placeholder for now */}
-            <img 
-              src={member.image} 
-              alt={member.name}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-semibold">{member.name}</h3>
-          <p className="text-sm text-muted-foreground mt-1">{member.role}</p>
-        </div>
-      ))}
-    </div>
-  </Container>
-</section>
+            <div className="mx-auto grid gap-8 md:grid-cols-3">
+              {[
+                {
+                  name: "Kevin Fernando",
+                  role: "Team Leader, Full Stack Developer",
+                  image: "/team/kevin.jpg" // Replace with actual image path
+                },
+                {
+                  name: "Pesandu Rashodya",
+                  role: "Co-Leader, Full Stack Developer",
+                  image: "/team/pesandu.jpg" // Replace with actual image path
+                },
+                {
+                  name: "Imsarie Dharmathilaka",
+                  role: "Full Stack Developer, Marketing",
+                  image: "/team/imsarie.jpg" // Replace with actual image path
+                },
+                {
+                  name: "Sudhir Fernando",
+                  role: "Full Stack Developer, Designer",
+                  image: "/team/sudhir.jpg" // Replace with actual image path
+                },
+                {
+                  name: "Manazir Mohommed",
+                  role: "Full Stack Developer, Designer",
+                  image: "/team/manazir.jpg" // Replace with actual image path
+                },
+                {
+                  name: "Yasindu Imanjith",
+                  role: "Full Stack Developer, ML Engineer",
+                  image: "/team/yasindu.jpg" // Replace with actual image path
+                }
+              ].map((member, index) => (
+                <div key={index} className="relative p-6 rounded-2xl bg-card shadow-md border border-muted/20 backdrop-blur-sm flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300">
+                  <div className="h-32 w-32 rounded-full overflow-hidden mb-4 border-2 border-primary/20">
+                    {/* Replace with actual images - using placeholder for now */}
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold">{member.name}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
 
         {/* Pricing Section */}
         <section id="pricing" className="py-24 bg-gradient-to-br from-background to-muted/20">
@@ -470,7 +470,7 @@ export default function Index() {
                 <p className="text-lg text-muted-foreground mb-8">
                   Have questions? We'd love to hear from you. Our team is ready to help you get started with DineEase and take your restaurant to the next level.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -490,7 +490,7 @@ export default function Index() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-card rounded-2xl p-8 shadow-lg border border-muted/20 backdrop-blur-sm">
                 <h3 className="text-xl font-semibold mb-6">Get in touch</h3>
                 <form ref={form} onSubmit={sendEmail} className="space-y-6">
@@ -578,7 +578,7 @@ export default function Index() {
             </div>
           </Container>
         </section>
-        
+
         {/* CTA Section - NEW */}
         <section className="bg-primary py-16">
           <Container>
