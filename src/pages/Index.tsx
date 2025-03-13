@@ -326,7 +326,7 @@ export default function Index() {
                 {
                   name: "Sudhir Fernando",
                   role: "Full Stack Developer, Designer",
-                  image: "/team/sudhir.jpg" // Replace with actual image path
+                  image: "/sudhir.jpg" // Replace with actual image path
                 },
                 {
                   name: "Manazir Mohommed",
