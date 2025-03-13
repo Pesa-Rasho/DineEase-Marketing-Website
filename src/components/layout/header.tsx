@@ -19,6 +19,7 @@ export function Header() {
     { name: "How it works", href: "/#how-it-works" },
     { name: "Pricing", href: "/#pricing" },
     { name: "Contact", href: "/#contact" },
+    { name: "Team", href: "/#team" },
   ]
 
   const handleNavigation = (href: string) => {
