@@ -316,12 +316,12 @@ export default function Index() {
                 {
                   name: "Pesandu Rashodya",
                   role: "Co-Leader, Full Stack Developer",
-                  image: "/team/pesandu.jpg" // Replace with actual image path
+                  image: "/pesandu.jpg" // Replace with actual image path
                 },
                 {
                   name: "Imsarie Dharmathilaka",
                   role: "Full Stack Developer, Marketing",
-                  image: "/team/imsarie.jpg" // Replace with actual image path
+                  image: "/imsarie.jpg" // Replace with actual image path
                 },
                 {
                   name: "Sudhir Fernando",
