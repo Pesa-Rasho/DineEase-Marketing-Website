@@ -311,7 +311,7 @@ export default function Index() {
                 {
                   name: "Kevin Fernando",
                   role: "Team Leader, Full Stack Developer",
-                  image: "/kevin.jpg" 
+                  image: "/kevin.png" 
                 },
                 {
                   name: "Pesandu Rashodya",
@@ -336,7 +336,7 @@ export default function Index() {
                 {
                   name: "Yasandu Imanjith",
                   role: "Full Stack Developer, ML Engineer",
-                  image: "/yasandu.jpg" 
+                  image: "/yasandu.png" 
                 }
               ].map((member, index) => (
                 <div key={index} className="relative p-6 rounded-2xl bg-card shadow-md border border-muted/20 backdrop-blur-sm flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300">
