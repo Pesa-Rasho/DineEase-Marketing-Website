@@ -334,7 +334,7 @@ export default function Index() {
                   image: "/manazir.jpg"
                 },
                 {
-                  name: "Yasindu Imanjith",
+                  name: "Yasandu Imanjith",
                   role: "Full Stack Developer, ML Engineer",
                   image: "/yasindu.jpg" 
                 }
